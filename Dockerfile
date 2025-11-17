@@ -1,7 +1,7 @@
 # ------------------------------------------------------------------
 # 1. BASE: Imagem Pytorch 2.3 estável (Recomendado)
 # ------------------------------------------------------------------
-FROM runpod/pytorch:2.3.0-py3.10-cuda12.1.0-ubuntu22.04
+FROM runpod/pytorch:3.0.0-cuda12.1.0
 
 # Define o diretório de trabalho padrão
 WORKDIR /workspace
