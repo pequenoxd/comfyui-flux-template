@@ -35,14 +35,12 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      # Passo 5: Constrói a imagem e envia para o Docker Hub
+      # Passo 5: Constrói a imagem e envia para o Docker Hub (Versão Simplificada)
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
           context: .
           file: ./Dockerfile
           push: true
-          # MUDE ISSO: para o nome do seu repositório no Docker Hub
-          tags: pequenoxd/comfyui-flux-template:latest 
-          cache-from: type=registry,ref=pequenoxd/comfyui-flux-template:buildcache
-          cache-to: type=registry,ref=pequenoxd/comfyui-flux-template:buildcache,mode=max
+          # Certifique-se que esta linha tem o seu nome de utilizador e repositório do Docker Hub
+          tags: pequenoxd/comfyui-flux-template:latest
