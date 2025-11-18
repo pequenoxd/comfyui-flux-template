@@ -1,9 +1,9 @@
 # ------------------------------------------------------------------
-# 1. BASE: Imagem Pytorch 2.2 estável
+# 1. BASE: Imagem Pytorch 2.2 estável (Sabemos que esta funciona)
 # ------------------------------------------------------------------
 FROM runpod/pytorch:2.2.0-py3.10-cuda12.1.1-devel-ubuntu22.04
 
-# Define o diretório de trabalho padrã
+# Define o diretório de trabalho padrão
 WORKDIR /workspace
 
 # ------------------------------------------------------------------
@@ -51,12 +51,12 @@ RUN pip install --upgrade pip && \
     pip install insightface==0.7.3 onnxruntime-gpu opencv-python-headless imageio imageio-ffmpeg
 
 # ------------------------------------------------------------------
-# 6. (REMOVIDO) Os WGETs dos modelos foram removidos
+# 6. (REMOVIDO) Nenhum modelo (WGETs) é baixado aqui
 # ------------------------------------------------------------------
 
 # ------------------------------------------------------------------
 # 7. Porta e Comando de Inicialização
 # ------------------------------------------------------------------
 EXPOSE 8188
-# O comando de inicialização será substituído no RunPod
+# Este comando será substituído pelo script do RunPod
 CMD ["python3", "main.py", "--listen", "0.0.0.0", "--port", "8188"]
